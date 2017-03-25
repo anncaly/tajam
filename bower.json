@@ -1,0 +1,20 @@
+{
+  "name": "tajam",
+  "description": "landing",
+  "main": "index.js",
+  "authors": [
+    "[Ann Caly] <[anncaly@gmail.com]>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/anncaly/tajam",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
