@@ -11,7 +11,8 @@ var gulp         = require('gulp'),
     imagemin     = require('gulp-imagemin'),
     pngquant     = require('imagemin-pngquant'),
     cache        = require('gulp-cache'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+    mainBowerFiles = require('main-bower-files');
 
 gulp.task('sass', function() {
     return gulp.src('src/scss/**/*.scss')
@@ -21,26 +22,59 @@ gulp.task('sass', function() {
     .pipe(browserSync.reload({stream: true}))
 });
 
+gulp.task('html', function() {
+    return gulp.src('src/*.html')
+    .pipe(gulp.dest('build'))
+    .pipe(browserSync.reload({stream: true}))
+});
+
 gulp.task('scripts', function() {
-    return gulp.src([
-       'src/libs/jquery/dist/jquery.min.js'
-    ])
-    .pipe(concat('libs.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('build/js'));
+    // return gulp.src([
+    //    'src/libs/jquery/dist/jquery.min.js'
+    // ])
+    // .pipe(concat('libs.min.js'))
+    // .pipe(uglify())
+    // .pipe(gulp.dest('build/js'));
+    gulp.src(mainBowerFiles(['**/*.js'],{
+        "overrides": {
+            "jquery": {
+                "main": [
+                    "dist/jquery.min.js"
+                ]
+             },
+             "owl.carousel": {
+                "main": [
+                    "./dist/owl.carousel.min.js"
+                ]
+             }
+
+        }            
+    }))
+        .pipe(gulp.dest('./build/js'));
 });
 
 gulp.task('css-libs', ['sass'], function() {
-    return gulp.src('build/css/libs.css')
-     .pipe(cssnano())
-     .pipe(rename({suffix: '.min'}))
-     .pipe(gulp.dest('build/css'));
+    // return gulp.src('build/css/libs.css')
+    //  .pipe(cssnano())
+    //  .pipe(rename({suffix: '.min'}))
+    //  .pipe(gulp.dest('build/css'));
+    gulp.src(mainBowerFiles(['**/*.css'], {
+        "overrides": {
+            "owl.carousel": {
+                "main": [
+                    "./dist/assets/owl.carousel.min.css",
+                    "./dist/assets/owl.theme.default.min.css"
+                ]
+             }
+        }            
+    }))
+        .pipe(gulp.dest('build/css'))
 });
 
 gulp.task('browser-sync', function() {
    browserSync({
      server: {
-         baseDir: 'src'
+         baseDir: 'build'
       },
       notify: false
    });
@@ -67,11 +101,13 @@ gulp.task('img', function() {
 
 gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
     gulp.watch('src/scss/**/*.scss', ['sass']);
-    gulp.watch('src/**/*.html', browserSync.reload);
+    gulp.watch('src/*.html', ['html']);
+    // gulp.watch('src/**/*.html', browserSync.reload);
+    // gulp.watch('src/*.html').on('change', browserSync.reload);
     gulp.watch('src/js/**/*.js', browserSync.reload);
 });
 
-gulp.task('build', ['clean', 'img', 'sass', 'scripts'], function() {
+gulp.task('build', ['clean', 'img', 'sass', 'css-libs', 'scripts'], function() {
     var buildCss = gulp.src([
         'build/css/main.css',
         'build/css/libs.min.css'

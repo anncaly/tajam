@@ -1,0 +1,105 @@
+@import "node_modules/normalize-scss/sass/normalize/import-now";
+@import "../libs/bootstrap-sass-grid/sass/bootstrap-sass-grid";
+// @import "src/libs/owl.carousel/dist/assets/owl.carousel.min.css";
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+header {
+	background-image: url('../img/bg_header.jpg');
+}
+.logo {
+	margin-top: 15px;
+}
+nav {
+	margin-top: 36px;
+	float: right;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		li {
+			display: inline-block;
+			float: left;
+			padding-right: 25px;
+			a {
+				font-family: 'Roboto', sans-serif;
+				color: #ffffff;
+				text-transform: uppercase;
+				text-decoration: none;
+				font-weight: bold;
+				font-size: 12px;
+				letter-spacing: 0.6px;
+				&:hover {
+					color: #00e0d0;
+				}
+				&:active {
+					color: #00e0d0;
+				}
+			}
+		}
+	}
+}
+
+.button {
+		text-align: center;
+    width: 118px;
+    margin: 45px auto 100px;
+		a {
+			color: #03d4c8;
+			border: 1px solid #03d4c8;
+			padding: 10px 15px;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-family: 'Hammersmith One', sans-serif;
+			&:hover {
+				background-color: #fff;
+			}
+		}
+	}
+
+.info_item {
+	color: #fff;
+	text-align: center;
+	margin-top: 145px;
+	h2 {
+		font-family: 'Playfair Display', serif;
+		font-size: 32px;
+		// margin-bottom: 20px;
+	}
+	p {
+		font-family: 'Roboto Light', sans-serif;
+		font-size: 14px;
+		line-height: 24px;
+		text-align: center;
+	}
+	.hr {
+		width: 50px;
+		height: 1px;
+		background: #00e0d0;
+		display: inline-block;
+		margin-bottom: 10px;
+	}
+	@extend .button;
+}
+.owl-dots {
+	text-align: center;
+  margin-top: -25px;
+  padding-bottom: 34px;
+}
+.owl-dot {
+	width: 8px;
+	height: 8px;
+	border: 1px solid #bababc;
+	display: inline-block;
+	margin-right: 5px;
+	border-radius: 5px;
+}
+.owl-dot.active {
+	background: #00e0d0;
+	border: 1px solid #00e0d0;
+}
+
+
+
+
