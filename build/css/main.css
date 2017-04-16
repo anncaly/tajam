@@ -645,8 +645,11 @@ th {
     page-break-after: avoid; }
   .navbar {
     display: none; }
-  .btn > .caret,
-  .dropup > .btn > .caret {
+  .btn > .caret, .info_item .button > .caret, .story .button > .caret, .team .hiring .button > .caret,
+  .dropup > .btn > .caret, .info_item
+  .dropup > .button > .caret, .story
+  .dropup > .button > .caret, .team .hiring
+  .dropup > .button > .caret {
     border-top-color: #000 !important; }
   .label {
     border: 1px solid #000; }
@@ -1434,7 +1437,8 @@ body {
   font-family: 'Roboto', sans-serif; }
 
 header {
-  background-image: url("../img/bg_header.jpg"); }
+  background: url("../img/bg_header.jpg") no-repeat top center;
+  background-size: cover; }
 
 .logo {
   margin-top: 15px; }
@@ -1463,25 +1467,52 @@ nav {
         nav ul li a:active {
           color: #00e0d0; }
 
-.button, .info_item {
+.btn, .info_item .button, .story .button, .team .hiring .button {
   text-align: center;
-  width: 118px;
-  margin: 45px auto 100px; }
-  .button a, .info_item a {
+  width: 118px; }
+  .btn a, .info_item .button a, .story .button a, .team .hiring .button a {
+    display: block;
     color: #03d4c8;
     border: 1px solid #03d4c8;
     padding: 10px 15px;
     text-decoration: none;
     text-transform: uppercase;
     font-family: 'Hammersmith One', sans-serif; }
-    .button a:hover, .info_item a:hover {
+    .btn a:hover, .info_item .button a:hover, .story .button a:hover, .team .hiring .button a:hover {
       background-color: #fff; }
+
+.headline, .section-heading h2, .expertise .heading h2, .team .heading h2, .story h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 22px;
+  margin: 0;
+  padding-bottom: 5px; }
+
+.section-heading, .expertise .heading, .team .heading {
+  text-align: center;
+  padding-top: 70px;
+  margin-bottom: 40px;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold; }
+  .section-heading h2, .expertise .heading h2, .team .heading h2 {
+    color: #413d4b; }
+  .section-heading .hr, .expertise .heading .hr, .team .heading .hr {
+    width: 50px;
+    height: 1px;
+    background: #c6c4c9;
+    display: inline-block;
+    margin: 10px 10px;
+    font-size: 14px; }
+  .section-heading p, .expertise .heading p, .team .heading p {
+    font-size: 14px;
+    line-height: 14px; }
 
 .info_item {
   color: #fff;
   text-align: center;
   margin-top: 145px; }
-  .info_item h2 {
+  .info_item h1 {
     font-family: 'Playfair Display', serif;
     font-size: 32px; }
   .info_item p {
@@ -1495,6 +1526,8 @@ nav {
     background: #00e0d0;
     display: inline-block;
     margin-bottom: 10px; }
+  .info_item .button {
+    margin: 45px auto 100px; }
 
 .owl-dots {
   text-align: center;
@@ -1508,8 +1541,130 @@ nav {
   display: inline-block;
   margin-right: 5px;
   -webkit-border-radius: 5px;
-          border-radius: 5px; }
+          border-radius: 5px;
+  cursor: pointer; }
 
 .owl-dot.active {
   background: #00e0d0;
   border: 1px solid #00e0d0; }
+
+.story {
+  padding-top: 70px; }
+  .story p {
+    font-family: 'Roboto', sans-serif;
+    color: #413d4b;
+    font-size: 14px;
+    line-height: 22px; }
+  .story .button {
+    padding: 10px 0 70px 0; }
+    .story .button a:hover {
+      background-color: #00e0d0;
+      color: #ffffff; }
+
+.video {
+  background: url("../img/bg_video.jpg") no-repeat top center;
+  background-size: cover;
+  min-height: 550px; }
+  .video .play_button {
+    display: block;
+    text-align: center;
+    margin: 200px; }
+    .video .play_button a {
+      color: #ffffff;
+      text-transform: uppercase;
+      text-decoration: none; }
+      .video .play_button a p {
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700; }
+    .video .play_button img:hover {
+      -webkit-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+              transform: scale(1.1);
+      -webkit-transition: 0.5s;
+      transition: 0.5s; }
+
+.expertise {
+  padding-bottom: 70px; }
+
+.exp_icon, .exp_item .exp_item_icon.web, .exp_item .exp_item_icon.brand, .exp_item .exp_item_icon.app, .exp_item .exp_item_icon.seo, .exp_item .exp_item_icon.game, .exp_item .exp_item_icon.love {
+  display: block;
+  margin: auto;
+  min-height: 50px; }
+
+.exp_item {
+  padding-top: 40px; }
+  .exp_item .exp_item_icon.web {
+    background-image: url(../img/sprites/icons.png);
+    background-position: -169px -188px;
+    width: 49px;
+    height: 50px; }
+  .exp_item .exp_item_icon.brand {
+    background-image: url(../img/sprites/icons.png);
+    background-position: -69px -100px;
+    width: 50px;
+    height: 42px; }
+  .exp_item .exp_item_icon.app {
+    background-image: url(../img/sprites/icons.png);
+    background-position: 0px 0px;
+    width: 28px;
+    height: 50px; }
+  .exp_item .exp_item_icon.seo {
+    background-image: url(../img/sprites/icons.png);
+    background-position: -218px -238px;
+    width: 50px;
+    height: 50px; }
+  .exp_item .exp_item_icon.game {
+    background-image: url(../img/sprites/icons.png);
+    background-position: -28px -50px;
+    width: 41px;
+    height: 50px; }
+  .exp_item .exp_item_icon.love {
+    background-image: url(../img/sprites/icons.png);
+    background-position: -119px -142px;
+    width: 50px;
+    height: 46px; }
+
+.exp_item_info {
+  text-align: center; }
+  .exp_item_info h3 {
+    text-transform: uppercase; }
+
+.border {
+  border-right: 1px solid #ebebeb;
+  display: inline-block;
+  padding-bottom: 10px; }
+
+.border:nth-child(1), .border:nth-child(2), .border:nth-child(3) {
+  border-bottom: 1px solid #ebebeb; }
+
+.border:nth-child(3), .border:nth-child(6) {
+  border-right: 0; }
+
+.team {
+  background: url("../img/bg_team.jpg") no-repeat top center;
+  background-size: cover; }
+  .team .heading {
+    color: #ffffff; }
+    .team .heading h2 {
+      color: #ffffff; }
+    .team .heading .hr {
+      background-color: #ffffff; }
+  .team .team_member {
+    border: 1px solid #77748b; }
+    .team .team_member .team_member_img img {
+      width: 100%;
+      vertical-align: bottom; }
+    .team .team_member .team_member_name {
+      text-transform: uppercase;
+      color: #ffffff;
+      text-align: center;
+      padding-bottom: 25px;
+      border-top: 1px solid #77748b; }
+  .team .hiring {
+    text-align: center;
+    color: #f3f3f3;
+    margin-top: 70px; }
+    .team .hiring .button {
+      width: 138px;
+      margin: 30px auto 60px; }

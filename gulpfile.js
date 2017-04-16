@@ -12,7 +12,8 @@ var gulp         = require('gulp'),
     pngquant     = require('imagemin-pngquant'),
     cache        = require('gulp-cache'),
     autoprefixer = require('gulp-autoprefixer'),
-    mainBowerFiles = require('main-bower-files');
+    mainBowerFiles = require('main-bower-files'),
+    spritesmith = require('gulp.spritesmith');
 
 gulp.task('sass', function() {
     return gulp.src('src/scss/**/*.scss')
@@ -46,8 +47,12 @@ gulp.task('scripts', function() {
                 "main": [
                     "./dist/owl.carousel.min.js"
                 ]
+             },
+             "matchHeight": {
+                "main": [
+                    "./dist/jquery.matchHeight-min.js"
+                ]
              }
-
         }            
     }))
         .pipe(gulp.dest('./build/js'));
@@ -69,6 +74,18 @@ gulp.task('css-libs', ['sass'], function() {
         }            
     }))
         .pipe(gulp.dest('build/css'))
+});
+
+gulp.task('sprite', function () {
+  var spriteData = gulp.src('src/img/icons/*.png')
+  .pipe(spritesmith({
+    imgName: 'icons.png',
+    cssName: '_icons.scss',
+    algorithm: 'diagonal',
+    imgPath: '../img/sprites/icons.png' 
+  }))
+  // spriteData.img.pipe(gulp.dest('src/img/sprites'))
+  spriteData.css.pipe(gulp.dest('src/scss'));
 });
 
 gulp.task('browser-sync', function() {
@@ -101,7 +118,7 @@ gulp.task('img', function() {
 
 gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
     gulp.watch('src/scss/**/*.scss', ['sass']);
-    gulp.watch('src/*.html', ['html']);
+    gulp.watch('src/*.html', ['html'], browserSync.reload);
     // gulp.watch('src/**/*.html', browserSync.reload);
     // gulp.watch('src/*.html').on('change', browserSync.reload);
     gulp.watch('src/js/**/*.js', browserSync.reload);

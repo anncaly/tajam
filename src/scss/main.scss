@@ -1,12 +1,14 @@
 @import "node_modules/normalize-scss/sass/normalize/import-now";
 @import "../libs/bootstrap-sass-grid/sass/bootstrap-sass-grid";
+@import "icons";
 // @import "src/libs/owl.carousel/dist/assets/owl.carousel.min.css";
 
 body {
 	font-family: 'Roboto', sans-serif;
 }
 header {
-	background-image: url('../img/bg_header.jpg');
+	background: url('../img/bg_header.jpg') no-repeat top center;
+	background-size: cover;
 }
 .logo {
 	margin-top: 15px;
@@ -41,28 +43,60 @@ nav {
 	}
 }
 
-.button {
-		text-align: center;
-    width: 118px;
-    margin: 45px auto 100px;
-		a {
-			color: #03d4c8;
-			border: 1px solid #03d4c8;
-			padding: 10px 15px;
-			text-decoration: none;
-			text-transform: uppercase;
-			font-family: 'Hammersmith One', sans-serif;
-			&:hover {
-				background-color: #fff;
-			}
+.btn {
+	text-align: center;
+  width: 118px;
+	a {
+		display: block;
+		color: #03d4c8;
+		border: 1px solid #03d4c8;
+		padding: 10px 15px;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-family: 'Hammersmith One', sans-serif;
+		&:hover {
+			background-color: #fff;
 		}
 	}
+}
+
+.headline {
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 22px;
+	margin: 0;
+	padding-bottom: 5px;
+}
+.section-heading {
+	text-align: center;
+	padding-top: 70px;
+	margin-bottom: 40px;
+	font-family: 'Playfair Display', serif;
+	font-weight: bold;
+	h2 {
+		@extend .headline;
+		color: #413d4b;
+	}
+	.hr {
+		width: 50px;
+		height: 1px;
+		background: #c6c4c9;
+		display: inline-block;
+		margin: 10px 10px;
+		font-size: 14px;
+	}
+	p {
+		font-size: 14px;
+		line-height: 14px;
+	}
+}
 
 .info_item {
 	color: #fff;
 	text-align: center;
 	margin-top: 145px;
-	h2 {
+	h1 {
 		font-family: 'Playfair Display', serif;
 		font-size: 32px;
 		// margin-bottom: 20px;
@@ -80,7 +114,10 @@ nav {
 		display: inline-block;
 		margin-bottom: 10px;
 	}
-	@extend .button;
+	.button {
+		@extend .btn;
+		margin: 45px auto 100px;
+	}
 }
 .owl-dots {
 	text-align: center;
@@ -94,12 +131,153 @@ nav {
 	display: inline-block;
 	margin-right: 5px;
 	border-radius: 5px;
+	cursor: pointer;
 }
 .owl-dot.active {
 	background: #00e0d0;
 	border: 1px solid #00e0d0;
 }
 
+.story {
+	padding-top: 70px;
+	h2 {
+		@extend .headline;
+	}
+	p {
+		font-family: 'Roboto', sans-serif;
+		color: #413d4b;
+		font-size: 14px;
+		line-height: 22px;
+	}
+	.button {
+		@extend .btn;
+		padding: 10px 0 70px 0;
+		& a:hover {
+			background-color: #00e0d0;
+			color: #ffffff;
+		}
+	}
+}
+.video {
+	background: url('../img/bg_video.jpg')  no-repeat top center;
+	background-size: cover;
+	min-height: 550px;
+		.play_button {
+			display: block;
+			text-align: center;
+			margin: 200px;
+			a {
+				color: #ffffff;
+				text-transform: uppercase;
+				text-decoration: none;
+				p {
+					font-size: 16px;
+					font-family: 'Roboto', sans-serif;
+					font-weight: 700;
+				}
+			}
+			img:hover {
+				transform: scale(1.1);
+				transition: 0.5s;
+			}
+		}
+}
 
+.expertise {
+	padding-bottom: 70px;
+	.heading {
+		@extend .section-heading;
+	}
+}
+.exp_icon {
+	display: block;
+	margin: auto;
+	min-height: 50px;
+}
+.exp_item {
+	padding-top: 40px;
+	.exp_item_icon.web{
+		@extend .exp_icon;
+		@include sprite($web);
+	}
+	.exp_item_icon.brand {
+		@extend .exp_icon;
+		@include sprite($brand);
+	}
+	.exp_item_icon.app {
+		@extend .exp_icon;
+		@include sprite($app);
+	}
+	.exp_item_icon.seo {
+		@extend .exp_icon;
+		@include sprite($seo);
+	}
+	.exp_item_icon.game {
+		@extend .exp_icon;
+		@include sprite($game);
+	}
+	.exp_item_icon.love {
+		@extend .exp_icon;
+		@include sprite($love);
+	}
+}
+.exp_item_info {
+	text-align: center;
+	h3 {
+		text-transform: uppercase;
+	}
+}
+.border {
+	border-right: 1px solid #ebebeb;
+	display: inline-block;
+	padding-bottom: 10px;
+}
+.border:nth-child(1), .border:nth-child(2), .border:nth-child(3) {
+	border-bottom: 1px solid #ebebeb;
+}
+.border:nth-child(3), .border:nth-child(6) {
+	border-right: 0;
+}
 
-
+.team {
+	background: url('../img/bg_team.jpg') no-repeat top center;
+	background-size: cover;
+	.heading {
+		@extend .section-heading;
+		color: #ffffff;
+		h2 {
+			color: #ffffff;
+		}
+		.hr {
+ 			background-color: #ffffff;
+		}
+	}
+	.team_member {
+		border: 1px solid #77748b;
+		.team_member_img {
+			// height: 230px;
+			// width: 220px;
+			img {
+			  width: 100%;
+        vertical-align: bottom;
+			}
+		}
+		.team_member_name {
+			text-transform: uppercase;
+			color: #ffffff;
+			text-align: center;
+			padding-bottom: 25px;
+			border-top: 1px solid #77748b;
+		}
+	}
+	.hiring {
+		text-align: center;
+		color: #f3f3f3;
+		margin-top: 70px;
+		.button {
+			@extend .btn;
+			width: 138px;
+			margin: 30px auto 60px;
+		}
+	}
+}

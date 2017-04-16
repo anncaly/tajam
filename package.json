@@ -29,7 +29,12 @@
     "gulp-main-bower-files": "^1.6.2",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
+    "gulp-svg-sprites": "^4.1.1",
+    "gulp-svg2png": "^2.0.2",
+    "gulp-svgo": "^1.0.3",
     "gulp-uglifyjs": "^0.6.2",
+    "gulp-util": "^3.0.8",
+    "gulp.spritesmith": "^6.4.0",
     "imagemin-pngquant": "^5.0.0"
   },
   "dependencies": {

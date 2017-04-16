@@ -11,6 +11,9 @@ $(document).ready(function(){
   			items: 1, 
   			nav: false
   		}
-  	},
+  	}
   });
+  $(function() {
+		$('.border').matchHeight();
+	});
 });
