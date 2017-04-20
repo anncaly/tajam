@@ -645,10 +645,11 @@ th {
     page-break-after: avoid; }
   .navbar {
     display: none; }
-  .btn > .caret, .info_item .button > .caret, .story .button > .caret, .team .hiring .button > .caret,
+  .btn > .caret, .info_item .button > .caret, .story .button > .caret, .team .hiring .button > .caret, .works .button > .caret,
   .dropup > .btn > .caret, .info_item
   .dropup > .button > .caret, .story
   .dropup > .button > .caret, .team .hiring
+  .dropup > .button > .caret, .works
   .dropup > .button > .caret {
     border-top-color: #000 !important; }
   .label {
@@ -1467,10 +1468,10 @@ nav {
         nav ul li a:active {
           color: #00e0d0; }
 
-.btn, .info_item .button, .story .button, .team .hiring .button {
+.btn, .info_item .button, .story .button, .team .hiring .button, .works .button {
   text-align: center;
   width: 118px; }
-  .btn a, .info_item .button a, .story .button a, .team .hiring .button a {
+  .btn a, .info_item .button a, .story .button a, .team .hiring .button a, .works .button a {
     display: block;
     color: #03d4c8;
     border: 1px solid #03d4c8;
@@ -1478,10 +1479,10 @@ nav {
     text-decoration: none;
     text-transform: uppercase;
     font-family: 'Hammersmith One', sans-serif; }
-    .btn a:hover, .info_item .button a:hover, .story .button a:hover, .team .hiring .button a:hover {
+    .btn a:hover, .info_item .button a:hover, .story .button a:hover, .team .hiring .button a:hover, .works .button a:hover {
       background-color: #fff; }
 
-.headline, .section-heading h2, .expertise .heading h2, .team .heading h2, .story h2 {
+.headline, .section-heading h2, .expertise .heading h2, .team .heading h2, .story h2, .works h2 {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -1641,6 +1642,17 @@ nav {
 .border:nth-child(3), .border:nth-child(6) {
   border-right: 0; }
 
+.name, .team .team_member .team_member_name, .reviews .review_item .review_name {
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center; }
+  .name h4, .team .team_member .team_member_name h4, .reviews .review_item .review_name h4 {
+    font-family: 'Roboto Black', sans-serif;
+    font-size: 14px; }
+  .name span, .team .team_member .team_member_name span, .reviews .review_item .review_name span {
+    font-family: 'Roboto Light', sans-serif;
+    font-size: 13px; }
+
 .team {
   background: url("../img/bg_team.jpg") no-repeat top center;
   background-size: cover; }
@@ -1656,11 +1668,8 @@ nav {
       width: 100%;
       vertical-align: bottom; }
     .team .team_member .team_member_name {
-      text-transform: uppercase;
-      color: #ffffff;
-      text-align: center;
-      padding-bottom: 25px;
-      border-top: 1px solid #77748b; }
+      border-top: 1px solid #77748b;
+      padding-bottom: 25px; }
   .team .hiring {
     text-align: center;
     color: #f3f3f3;
@@ -1668,3 +1677,92 @@ nav {
     .team .hiring .button {
       width: 138px;
       margin: 30px auto 60px; }
+    .team .hiring p {
+      font-family: 'Roboto Light', sans-serif; }
+
+.works h2 {
+  margin: 60px; }
+
+.works .projects {
+  margin-top: 65px; }
+  .works .projects a {
+    color: #5a5763;
+    text-decoration: none;
+    text-align: left;
+    font-family: 'Roboto Light', sans-serif;
+    font-size: 14px; }
+    .works .projects a:after {
+      content: url("../img/arrow.png");
+      padding-left: 10px;
+      padding-top: 2px; }
+
+.works .no-margin {
+  margin: 0px 0px;
+  padding-right: 0;
+  padding-left: 0; }
+  .works .no-margin img {
+    width: 100%;
+    display: block; }
+
+.works .button {
+  padding: 10px 0 70px 0;
+  margin: 60px auto; }
+  .works .button a:hover {
+    background-color: #00e0d0;
+    color: #ffffff; }
+
+.reviews {
+  background: url("../img/bg_review.jpg") no-repeat center center;
+  background-size: cover; }
+  .reviews .owl-custom-dots {
+    height: 50px; }
+    .reviews .owl-custom-dots .owl-custom-dot {
+      height: 50px;
+      width: 50px; }
+
+#carousel-custom-dots {
+  text-align: center;
+  margin: 55px 0px 40px; }
+
+.owl-custom-dot {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer; }
+  .owl-custom-dot img {
+    image-rendering: optimizeQuality; }
+
+.owl-custom-dot.active {
+  -webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+          transform: scale(1.3); }
+
+.owl-nav .owl-prev {
+  position: absolute;
+  top: 120%;
+  left: 32%; }
+
+.owl-nav .owl-next {
+  position: absolute;
+  top: 120%;
+  right: 33%; }
+
+.review_item .quotes {
+  background: url("../img/quotes.png") no-repeat center center;
+  height: 50px;
+  margin: 60px 0px 15px; }
+
+.review_item p {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 30px; }
+
+.review_item h4 {
+  font-family: 'Roboto Black', sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  text-transform: uppercase;
+  margin-bottom: 10px; }
