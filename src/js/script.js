@@ -36,5 +36,6 @@ $(document).ready(function(){
 // });
   $(function() {
 		$('.border').matchHeight();
+		$('.table').matchHeight();
 	});
 });

@@ -1482,7 +1482,7 @@ nav {
     .btn a:hover, .info_item .button a:hover, .story .button a:hover, .team .hiring .button a:hover, .works .button a:hover {
       background-color: #fff; }
 
-.headline, .section-heading h2, .expertise .heading h2, .team .heading h2, .story h2, .works h2 {
+.headline, .section-heading h2, .expertise .heading h2, .team .heading h2, .story h2, .works h2, .contacts h2 {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -1766,3 +1766,187 @@ nav {
   line-height: 22px;
   text-transform: uppercase;
   margin-bottom: 10px; }
+
+.contacts h2 {
+  margin: 60px 0px 30px; }
+
+.contacts form input, .contacts form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-family: 'Roboto Light', sans-serif;
+  font-size: 14px;
+  color: #74717b;
+  border: 1px solid #e5e5e5; }
+
+.contacts form input[type="submit"] {
+  text-align: center;
+  width: 118px;
+  display: block;
+  color: #03d4c8;
+  border: 1px solid #03d4c8;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Hammersmith One', sans-serif;
+  background-color: #fff;
+  margin-bottom: 70px; }
+  .contacts form input[type="submit"]:hover {
+    background-color: #03d4c8;
+    color: #ffffff; }
+
+.contacts img {
+  padding-bottom: 50px; }
+
+footer {
+  background: url("../img/bg_footer.jpg") no-repeat top center;
+  background-size: cover;
+  color: #ffffff; }
+  footer .info {
+    margin-top: 70px; }
+  footer p {
+    font-family: 'Roboto Light', sans-serif;
+    font-size: 14px;
+    line-height: 26px; }
+  footer h4 {
+    font-family: 'Roboto Black', sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    text-transform: uppercase;
+    margin-bottom: 10px; }
+  footer .studio ul {
+    list-style-type: none; }
+    footer .studio ul li p {
+      margin-left: -5px;
+      margin-top: -7px; }
+    footer .studio ul li:first-child {
+      margin-bottom: -10px; }
+    footer .studio ul li:first-child:before {
+      background: url(../img/sprites/small_icons.png) no-repeat 0px 0px;
+      width: 14px;
+      height: 19px;
+      display: block;
+      content: " ";
+      position: relative;
+      right: 40px;
+      top: 18px; }
+    footer .studio ul li:last-child:before {
+      background: url(../img/sprites/small_icons.png) no-repeat -14px -19px;
+      width: 17px;
+      height: 17px;
+      display: block;
+      content: " ";
+      position: relative;
+      right: 40px;
+      top: 14px; }
+  footer .intouch form {
+    margin-top: 31px; }
+  footer .intouch input[type="text"] {
+    width: 208px;
+    border: 1px solid #9e97b0;
+    background: none;
+    padding: 13px;
+    float: left; }
+    footer .intouch input[type="text"]::-webkit-input-placeholder {
+      color: #9e97b0; }
+    footer .intouch input[type="text"]::-moz-placeholder {
+      color: #9e97b0; }
+    footer .intouch input[type="text"]:-ms-input-placeholder {
+      color: #9e97b0; }
+    footer .intouch input[type="text"]::placeholder {
+      color: #9e97b0; }
+  footer .intouch button {
+    width: 70px;
+    height: 45px;
+    opacity: 0.7;
+    margin-left: 10px;
+    border: 1px solid #9e97b0; }
+    footer .intouch button:before {
+      background: url(../img/sprites/small_icons.png) no-repeat -31px -36px;
+      width: 25px;
+      height: 25px;
+      display: block;
+      content: " ";
+      position: relative;
+      top: 2px;
+      left: 13px; }
+  footer .intouch ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin-top: 25px; }
+    footer .intouch ul li {
+      display: inline-block;
+      padding-right: 5px; }
+      footer .intouch ul li:nth-child(1) a {
+        background: url(../img/sprites/socials.png) no-repeat -105px -105px;
+        display: block;
+        width: 35px;
+        height: 35px;
+        right: 40px;
+        top: 14px; }
+        footer .intouch ul li:nth-child(1) a:hover {
+          background: url(../img/sprites/socials.png) no-repeat -70px -70px; }
+      footer .intouch ul li:nth-child(2) a {
+        background: url(../img/sprites/socials.png) no-repeat -315px -315px;
+        display: block;
+        width: 35px;
+        height: 35px;
+        right: 40px;
+        top: 14px; }
+        footer .intouch ul li:nth-child(2) a:hover {
+          background: url(../img/sprites/socials.png) no-repeat -280px -280px; }
+      footer .intouch ul li:nth-child(3) a {
+        background: url(../img/sprites/socials.png) no-repeat -210px -210px;
+        display: block;
+        width: 35px;
+        height: 35px;
+        right: 40px;
+        top: 14px; }
+        footer .intouch ul li:nth-child(3) a:hover {
+          background: url(../img/sprites/socials.png) no-repeat -35px -35px; }
+      footer .intouch ul li:nth-child(4) a {
+        background: url(../img/sprites/socials.png) no-repeat -245px -245px;
+        display: block;
+        width: 35px;
+        height: 35px;
+        right: 40px;
+        top: 14px; }
+        footer .intouch ul li:nth-child(4) a:hover {
+          background: url(../img/sprites/socials.png) no-repeat 0px 0px; }
+      footer .intouch ul li:nth-child(5) a {
+        background: url(../img/sprites/socials.png) no-repeat -175px -175px;
+        display: block;
+        width: 35px;
+        height: 35px;
+        right: 40px;
+        top: 14px; }
+        footer .intouch ul li:nth-child(5) a:hover {
+          background: url(../img/sprites/socials.png) no-repeat -140px -140px; }
+      footer .intouch ul li:nth-child(6) a {
+        background: url(../img/sprites/socials.png) no-repeat -385px -385px;
+        display: block;
+        width: 35px;
+        height: 35px;
+        right: 40px;
+        top: 14px; }
+        footer .intouch ul li:nth-child(6) a:hover {
+          background: url(../img/sprites/socials.png) no-repeat -350px -350px; }
+  footer .links ul {
+    margin-top: 20px;
+    padding-left: 15px; }
+    footer .links ul li {
+      list-style-type: none;
+      display: inline-block;
+      padding-right: 25px; }
+      footer .links ul li a {
+        color: #ffffff;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+        text-decoration: none; }
+        footer .links ul li a:hover {
+          color: #00e0d0; }
+  footer .copy {
+    color: #ffffff;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif; }

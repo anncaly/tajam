@@ -1,0 +1,211 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$dribbble-hover-name: 'dribbble-hover';
+$dribbble-hover-x: 35px;
+$dribbble-hover-y: 35px;
+$dribbble-hover-offset-x: -35px;
+$dribbble-hover-offset-y: -35px;
+$dribbble-hover-width: 35px;
+$dribbble-hover-height: 35px;
+$dribbble-hover-total-width: 420px;
+$dribbble-hover-total-height: 420px;
+$dribbble-hover-image: '../img/sprites/socials.png';
+$dribbble-hover: (35px, 35px, -35px, -35px, 35px, 35px, 420px, 420px, '../img/sprites/socials.png', 'dribbble-hover', );
+$dribbble-name: 'dribbble';
+$dribbble-x: 210px;
+$dribbble-y: 210px;
+$dribbble-offset-x: -210px;
+$dribbble-offset-y: -210px;
+$dribbble-width: 35px;
+$dribbble-height: 35px;
+$dribbble-total-width: 420px;
+$dribbble-total-height: 420px;
+$dribbble-image: '../img/sprites/socials.png';
+$dribbble: (210px, 210px, -210px, -210px, 35px, 35px, 420px, 420px, '../img/sprites/socials.png', 'dribbble', );
+$facebook-hover-name: 'facebook-hover';
+$facebook-hover-x: 70px;
+$facebook-hover-y: 70px;
+$facebook-hover-offset-x: -70px;
+$facebook-hover-offset-y: -70px;
+$facebook-hover-width: 35px;
+$facebook-hover-height: 35px;
+$facebook-hover-total-width: 420px;
+$facebook-hover-total-height: 420px;
+$facebook-hover-image: '../img/sprites/socials.png';
+$facebook-hover: (70px, 70px, -70px, -70px, 35px, 35px, 420px, 420px, '../img/sprites/socials.png', 'facebook-hover', );
+$facebook-name: 'facebook';
+$facebook-x: 105px;
+$facebook-y: 105px;
+$facebook-offset-x: -105px;
+$facebook-offset-y: -105px;
+$facebook-width: 35px;
+$facebook-height: 35px;
+$facebook-total-width: 420px;
+$facebook-total-height: 420px;
+$facebook-image: '../img/sprites/socials.png';
+$facebook: (105px, 105px, -105px, -105px, 35px, 35px, 420px, 420px, '../img/sprites/socials.png', 'facebook', );
+$gplus-hover-name: 'gplus-hover';
+$gplus-hover-x: 140px;
+$gplus-hover-y: 140px;
+$gplus-hover-offset-x: -140px;
+$gplus-hover-offset-y: -140px;
+$gplus-hover-width: 35px;
+$gplus-hover-height: 35px;
+$gplus-hover-total-width: 420px;
+$gplus-hover-total-height: 420px;
+$gplus-hover-image: '../img/sprites/socials.png';
+$gplus-hover: (140px, 140px, -140px, -140px, 35px, 35px, 420px, 420px, '../img/sprites/socials.png', 'gplus-hover', );
+$gplus-name: 'gplus';
+$gplus-x: 175px;
+$gplus-y: 175px;
+$gplus-offset-x: -175px;
+$gplus-offset-y: -175px;
+$gplus-width: 35px;
+$gplus-height: 35px;
+$gplus-total-width: 420px;
+$gplus-total-height: 420px;
+$gplus-image: '../img/sprites/socials.png';
+$gplus: (175px, 175px, -175px, -175px, 35px, 35px, 420px, 420px, '../img/sprites/socials.png', 'gplus', );
+$instagram-hover-name: 'instagram-hover';
+$instagram-hover-x: 0px;
+$instagram-hover-y: 0px;
+$instagram-hover-offset-x: 0px;
+$instagram-hover-offset-y: 0px;
+$instagram-hover-width: 35px;
+$instagram-hover-height: 35px;
+$instagram-hover-total-width: 420px;
+$instagram-hover-total-height: 420px;
+$instagram-hover-image: '../img/sprites/socials.png';
+$instagram-hover: (0px, 0px, 0px, 0px, 35px, 35px, 420px, 420px, '../img/sprites/socials.png', 'instagram-hover', );
+$instagram-name: 'instagram';
+$instagram-x: 245px;
+$instagram-y: 245px;
+$instagram-offset-x: -245px;
+$instagram-offset-y: -245px;
+$instagram-width: 35px;
+$instagram-height: 35px;
+$instagram-total-width: 420px;
+$instagram-total-height: 420px;
+$instagram-image: '../img/sprites/socials.png';
+$instagram: (245px, 245px, -245px, -245px, 35px, 35px, 420px, 420px, '../img/sprites/socials.png', 'instagram', );
+$twitter-hover-name: 'twitter-hover';
+$twitter-hover-x: 280px;
+$twitter-hover-y: 280px;
+$twitter-hover-offset-x: -280px;
+$twitter-hover-offset-y: -280px;
+$twitter-hover-width: 35px;
+$twitter-hover-height: 35px;
+$twitter-hover-total-width: 420px;
+$twitter-hover-total-height: 420px;
+$twitter-hover-image: '../img/sprites/socials.png';
+$twitter-hover: (280px, 280px, -280px, -280px, 35px, 35px, 420px, 420px, '../img/sprites/socials.png', 'twitter-hover', );
+$twitter-name: 'twitter';
+$twitter-x: 315px;
+$twitter-y: 315px;
+$twitter-offset-x: -315px;
+$twitter-offset-y: -315px;
+$twitter-width: 35px;
+$twitter-height: 35px;
+$twitter-total-width: 420px;
+$twitter-total-height: 420px;
+$twitter-image: '../img/sprites/socials.png';
+$twitter: (315px, 315px, -315px, -315px, 35px, 35px, 420px, 420px, '../img/sprites/socials.png', 'twitter', );
+$youtube-hover-name: 'youtube-hover';
+$youtube-hover-x: 350px;
+$youtube-hover-y: 350px;
+$youtube-hover-offset-x: -350px;
+$youtube-hover-offset-y: -350px;
+$youtube-hover-width: 35px;
+$youtube-hover-height: 35px;
+$youtube-hover-total-width: 420px;
+$youtube-hover-total-height: 420px;
+$youtube-hover-image: '../img/sprites/socials.png';
+$youtube-hover: (350px, 350px, -350px, -350px, 35px, 35px, 420px, 420px, '../img/sprites/socials.png', 'youtube-hover', );
+$youtube-name: 'youtube';
+$youtube-x: 385px;
+$youtube-y: 385px;
+$youtube-offset-x: -385px;
+$youtube-offset-y: -385px;
+$youtube-width: 35px;
+$youtube-height: 35px;
+$youtube-total-width: 420px;
+$youtube-total-height: 420px;
+$youtube-image: '../img/sprites/socials.png';
+$youtube: (385px, 385px, -385px, -385px, 35px, 35px, 420px, 420px, '../img/sprites/socials.png', 'youtube', );
+$spritesheet-width: 420px;
+$spritesheet-height: 420px;
+$spritesheet-image: '../img/sprites/socials.png';
+$spritesheet-sprites: ($dribbble-hover, $dribbble, $facebook-hover, $facebook, $gplus-hover, $gplus, $instagram-hover, $instagram, $twitter-hover, $twitter, $youtube-hover, $youtube, );
+$spritesheet: (420px, 420px, '../img/sprites/socials.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

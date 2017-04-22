@@ -77,14 +77,28 @@ gulp.task('css-libs', ['sass'], function() {
 });
 
 gulp.task('sprite', function () {
-  var spriteData = gulp.src('src/img/icons/*.png')
+  // var spriteData = gulp.src('src/img/icons/*.png')
+  // .pipe(spritesmith({
+  //   imgName: 'icons.png',
+  //   cssName: '_icons.scss',
+  //   algorithm: 'diagonal',
+  //   imgPath: '../img/sprites/icons.png' 
+  // }))
+  var spriteData = gulp.src('src/img/socials/*.png')
   .pipe(spritesmith({
-    imgName: 'icons.png',
-    cssName: '_icons.scss',
+    imgName: 'socials.png',
+    cssName: '_socials.scss',
     algorithm: 'diagonal',
-    imgPath: '../img/sprites/icons.png' 
+    imgPath: '../img/sprites/socials.png' 
   }))
-  // spriteData.img.pipe(gulp.dest('src/img/sprites'))
+  // var spriteData = gulp.src('src/img/small_icons/*.png')
+  // .pipe(spritesmith({
+  //   imgName: 'small_icons.png',
+  //   cssName: '_small_icons.scss',
+  //   algorithm: 'diagonal',
+  //   imgPath: '../img/sprites/small_icons.png' 
+  // }))
+  spriteData.img.pipe(gulp.dest('src/img/sprites'))
   spriteData.css.pipe(gulp.dest('src/scss'));
 });
 
