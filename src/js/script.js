@@ -38,4 +38,18 @@ $(document).ready(function(){
 		$('.border').matchHeight();
 		$('.table').matchHeight();
 	});
+  // $('.toggle-nav').click(function(e) {
+  //   $(this).toggleClass('active');
+  //   $('.menu ul').toggleClass('active');
+  //   e.preventDefault();
+  // });
+  $('.toggle-nav').on('click', function() {
+    $('nav ul').toggleClass('show');
+  });
+  // $('.toggle-nav').click(function() {
+  //   $(this).toggleClass('show');
+  //   $("header nav").slideToggle(400, function() {
+  //     $(this).toggleClass("nav-expanded").css('display', '');
+  // });
+  // });
 });

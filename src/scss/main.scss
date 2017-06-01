@@ -7,14 +7,44 @@
 
 body {
 	font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
 }
+// .container {
+// 	padding-left: 0px;
+// 	padding-right: 0px;
+// }
 header {
 	background: url('../img/bg_header.jpg') no-repeat top center;
 	background-size: cover;
 }
 .logo {
 	margin-top: 15px;
+	float: left;
 }
+
+// @media (max-width: 768px) {
+// 	.nav {display: none;
+// 		position: absolute;}
+// 	.nav li {float: none;}
+// 	.nav li a {
+// 		color: white;
+// 	}
+	
+// }
+
+.toggle-nav {
+	display: none;
+  float: right;
+  color: white;
+  cursor: pointer;
+}
+
+// .menu {
+// 	position: fixed;
+// 	top: 0;
+// 	width: 100%;
+// 	// overflow: hidden;
+// }
 nav {
 	margin-top: 36px;
 	float: right;
@@ -44,7 +74,36 @@ nav {
 		}
 	}
 }
-
+@media screen and (max-width: 740px) {
+	.toggle-nav {
+		display: block;
+		float: right;
+		position: fixed;
+		right: 0;
+		z-index: 1;
+	}
+	nav {
+		margin-top: 0px;
+		position: fixed;
+		z-index: 1000;
+		width: 100%;
+	}
+	nav ul, nav:active ul {
+		display: none;
+	}
+	.show {
+		display: block;
+		text-align: center;
+		background-color: #3d3467;
+		margin-top: 70px;
+		opacity: 0.98;
+	}
+	nav ul li {
+		width: 100%;
+		float: none;
+		padding: 10px;	
+	}
+}
 .btn {
 	text-align: center;
   width: 118px;
@@ -141,6 +200,10 @@ nav {
 }
 
 .story {
+	.big_logo {
+	display: block;
+	margin: 0 auto 30px;
+}
 	padding-top: 70px;
 	h2 {
 		@extend .headline;
@@ -167,7 +230,7 @@ nav {
 		.play_button {
 			display: block;
 			text-align: center;
-			margin: 200px;
+			margin-top: 200px;
 			a {
 				color: #ffffff;
 				text-transform: uppercase;

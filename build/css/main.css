@@ -1435,14 +1435,22 @@ body {
     display: none !important; } }
 
 body {
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden; }
 
 header {
   background: url("../img/bg_header.jpg") no-repeat top center;
   background-size: cover; }
 
 .logo {
-  margin-top: 15px; }
+  margin-top: 15px;
+  float: left; }
+
+.toggle-nav {
+  display: none;
+  float: right;
+  color: white;
+  cursor: pointer; }
 
 nav {
   margin-top: 36px;
@@ -1467,6 +1475,31 @@ nav {
           color: #00e0d0; }
         nav ul li a:active {
           color: #00e0d0; }
+
+@media screen and (max-width: 740px) {
+  .toggle-nav {
+    display: block;
+    float: right;
+    position: fixed;
+    right: 0;
+    z-index: 1; }
+  nav {
+    margin-top: 0px;
+    position: fixed;
+    z-index: 1000;
+    width: 100%; }
+  nav ul, nav:active ul {
+    display: none; }
+  .show {
+    display: block;
+    text-align: center;
+    background-color: #3d3467;
+    margin-top: 70px;
+    opacity: 0.98; }
+  nav ul li {
+    width: 100%;
+    float: none;
+    padding: 10px; } }
 
 .btn, .info_item .button, .story .button, .team .hiring .button, .works .button {
   text-align: center;
@@ -1551,6 +1584,9 @@ nav {
 
 .story {
   padding-top: 70px; }
+  .story .big_logo {
+    display: block;
+    margin: 0 auto 30px; }
   .story p {
     font-family: 'Roboto', sans-serif;
     color: #413d4b;
@@ -1569,7 +1605,7 @@ nav {
   .video .play_button {
     display: block;
     text-align: center;
-    margin: 200px; }
+    margin-top: 200px; }
     .video .play_button a {
       color: #ffffff;
       text-transform: uppercase;
