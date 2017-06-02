@@ -1446,60 +1446,149 @@ header {
   margin-top: 15px;
   float: left; }
 
-.toggle-nav {
-  display: none;
-  float: right;
-  color: white;
-  cursor: pointer; }
+.scrolled {
+  background-color: #342B58;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease; }
 
-nav {
-  margin-top: 36px;
-  float: right; }
-  nav ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none; }
-    nav ul li {
-      display: inline-block;
-      float: left;
-      padding-right: 25px; }
-      nav ul li a {
-        font-family: 'Roboto', sans-serif;
-        color: #ffffff;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 12px;
-        letter-spacing: 0.6px; }
-        nav ul li a:hover {
-          color: #00e0d0; }
-        nav ul li a:active {
-          color: #00e0d0; }
-
-@media screen and (max-width: 740px) {
-  .toggle-nav {
-    display: block;
+.menu {
+  z-index: 500;
+  position: fixed;
+  width: 100%;
+  height: 55px;
+  padding: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.9; }
+  @media only screen and (min-width: 768px) {
+    .menu {
+      height: 75px; } }
+  .menu .logo {
+    color: #fff;
+    position: absolute;
+    margin: 3px 15px; }
+    @media only screen and (min-width: 768px) {
+      .menu .logo {
+        margin-top: 16px; } }
+    @media only screen and (min-width: 1201px) {
+      .menu .logo {
+        margin-left: 0; } }
+  .menu .navicon-button {
+    padding: 23px 0;
+    margin: 0 15px;
+    display: inline-block;
+    position: relative;
     float: right;
-    position: fixed;
-    right: 0;
-    z-index: 1; }
-  nav {
-    margin-top: 0px;
-    position: fixed;
-    z-index: 1000;
-    width: 100%; }
-  nav ul, nav:active ul {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
+    @media only screen and (min-width: 768px) {
+      .menu .navicon-button {
+        display: none; } }
+    .menu .navicon-button.open {
+      -webkit-transform: scale(0.65);
+      -ms-transform: scale(0.65);
+      transform: scale(0.65); }
+      .menu .navicon-button.open:not(.steps) .navicon:before,
+      .menu .navicon-button.open:not(.steps) .navicon:after {
+        top: 0 !important; }
+      .menu .navicon-button.open .navicon {
+        background: transparent; }
+        .menu .navicon-button.open .navicon:before, .menu .navicon-button.open .navicon:after {
+          -webkit-transition: 0.4s;
+          transition: 0.4s; }
+        .menu .navicon-button.open .navicon:before {
+          -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
+        .menu .navicon-button.open .navicon:after {
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg); }
+    .menu .navicon-button .navicon {
+      position: relative;
+      width: 36px;
+      height: 4px;
+      background: #fff;
+      -webkit-transition: 0.4s;
+      transition: 0.4s; }
+      .menu .navicon-button .navicon:before, .menu .navicon-button .navicon:after {
+        display: block;
+        content: "";
+        height: 4px;
+        width: 36px;
+        background: #fff;
+        position: absolute;
+        z-index: -1;
+        -webkit-transition: 0.2s;
+        transition: 0.2s; }
+      .menu .navicon-button .navicon:before {
+        top: 10px; }
+      .menu .navicon-button .navicon:after {
+        top: -10px; }
+    .menu .navicon-button:hover {
+      -webkit-transition: 0.4s;
+      transition: 0.4s; }
+      .menu .navicon-button:hover .navicon:before,
+      .menu .navicon-button:hover .navicon:after {
+        -webkit-transition: 0.2s;
+        transition: 0.2s; }
+  .menu nav {
+    margin-top: 36px;
+    clear: both;
     display: none; }
-  .show {
-    display: block;
-    text-align: center;
-    background-color: #3d3467;
-    margin-top: 70px;
-    opacity: 0.98; }
-  nav ul li {
-    width: 100%;
-    float: none;
-    padding: 10px; } }
+    .menu nav ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none; }
+      .menu nav ul li {
+        text-align: center;
+        padding-right: 25px; }
+        @media only screen and (min-width: 768px) {
+          .menu nav ul li {
+            float: left;
+            background: transparent; }
+            .menu nav ul li:last-child {
+              margin-right: 0;
+              border-right: 0; } }
+        .menu nav ul li a {
+          font-family: 'Roboto', sans-serif;
+          color: #ffffff;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 12px;
+          letter-spacing: 0.6px; }
+          .menu nav ul li a:hover {
+            color: #00e0d0; }
+          .menu nav ul li a:active {
+            color: #00e0d0; }
+    @media only screen and (min-width: 768px) {
+      .menu nav {
+        float: left;
+        background: transparent; }
+        .menu nav:last-child {
+          margin-right: 0;
+          border-right: 0; } }
+    .menu nav.nav-expanded {
+      display: block; }
+    @media only screen and (min-width: 768px) {
+      .menu nav {
+        display: block;
+        float: right;
+        border-top: 0;
+        border-left: 1px solid #342B58;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        margin-left: 15px; } }
+    @media only screen and (min-width: 1201px) {
+      .menu nav {
+        border-right: 1px solid #342B58;
+        opacity: 1; } }
 
 .btn, .info_item .button, .story .button, .team .hiring .button, .works .button {
   text-align: center;
@@ -1562,6 +1651,9 @@ nav {
     margin-bottom: 10px; }
   .info_item .button {
     margin: 45px auto 100px; }
+
+.owl-carousel.slide-one {
+  margin-top: 30px; }
 
 .owl-dots {
   text-align: center;

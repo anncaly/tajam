@@ -43,13 +43,20 @@ $(document).ready(function(){
   //   $('.menu ul').toggleClass('active');
   //   e.preventDefault();
   // });
-  $('.toggle-nav').on('click', function() {
-    $('nav ul').toggleClass('show');
+  // $('.toggle-nav').on('click', function() {
+  //   $('nav ul').toggleClass('show');
+  // });
+$(".navicon-button").click(function() {
+  $(this).toggleClass("open"); 
+  $("header nav").slideToggle(400, function() {
+    $(this).toggleClass("nav-expanded").css('display', '');
   });
-  // $('.toggle-nav').click(function() {
-  //   $(this).toggleClass('show');
-  //   $("header nav").slideToggle(400, function() {
-  //     $(this).toggleClass("nav-expanded").css('display', '');
-  // });
-  // });
+});
+  $(window).scroll(function() {
+    if ($(document).scrollTop() > 10) { 
+      $(".menu").addClass("scrolled"); 
+    } else {
+      $(".menu").removeClass("scrolled");
+    }
+  });
 });

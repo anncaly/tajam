@@ -4,15 +4,17 @@
 @import "small_icons";
 @import "socials";
 // @import "src/libs/owl.carousel/dist/assets/owl.carousel.min.css";
+$duration: .4s;
+$toggled-size : .65;
+$color: #3b6902;
+$color-light: lighten(#3b6902, 10%);
+$nav-text-color: #fff;
 
 body {
 	font-family: 'Roboto', sans-serif;
 	overflow-x: hidden;
 }
-// .container {
-// 	padding-left: 0px;
-// 	padding-right: 0px;
-// }
+
 header {
 	background: url('../img/bg_header.jpg') no-repeat top center;
 	background-size: cover;
@@ -21,23 +23,213 @@ header {
 	margin-top: 15px;
 	float: left;
 }
-
-// @media (max-width: 768px) {
-// 	.nav {display: none;
-// 		position: absolute;}
-// 	.nav li {float: none;}
-// 	.nav li a {
-// 		color: white;
-// 	}
-	
-// }
-
-.toggle-nav {
-	display: none;
-  float: right;
-  color: white;
-  cursor: pointer;
+.scrolled {
+		background-color: #342B58; 
+		transition:all 1s ease;
+	}
+.menu {
+  z-index: 500;
+  position: fixed;
+  width: 100%;
+  height: 55px;
+  padding: 0;
+  left: 0;
+  right: 0;
+  // border-bottom: 1px solid #342B58;
+  // box-shadow: 0 3px rgba(0,0,0,.1);
+  // background-color: transparent;
+  opacity: 0.9;
+  @media only screen and (min-width : 768px) {
+    height: 75px;
+    // border-bottom: 1px solid #342B58;;
+    // background-color: transparent;
+ //    .scrolled {
+	// 	// background-color: #342B58; 
+	// 	transition:all 1s ease;
+	// }
+  }
+  .logo {
+    color: $nav-text-color;
+    position: absolute;
+    margin: 3px 15px;
+    @media only screen 
+    and (min-width : 768px) {
+      margin-top: 16px;
+    }
+    @media only screen 
+      and (min-width : 1201px) {
+      margin-left: 0;
+    }
+  }
+  .navicon-button {
+    padding: 23px 0;
+    margin: 0 15px;
+    display: inline-block;
+    position: relative;
+    float: right;
+    -webkit-transition: $duration/2;
+    -moz-transition: $duration/2;
+    -o-transition: $duration/2;
+    transition: $duration/2;
+    cursor: pointer;
+    user-select: none;
+    @media only screen 
+    and (min-width : 768px) {
+      display: none;
+    }
+    &.open {
+      -webkit-transform: scale($toggled-size);
+      -moz-transform: scale($toggled-size);
+      -ms-transform: scale($toggled-size);
+      -o-transform: scale($toggled-size);
+      transform: scale($toggled-size);
+      &:not(.steps) .navicon:before,
+      &:not(.steps) .navicon:after {
+        top: 0 !important;
+      }
+      .navicon {
+        background: transparent;
+        &:before, &:after {
+          -webkit-transition: $duration;
+			    -moz-transition: $duration;
+			    -o-transition: $duration;
+			    transition: $duration;
+        }
+        &:before {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+        &:after {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+      }
+    }
+    .navicon {
+      position: relative;
+      width: 36px;
+      height: 4px;
+      background: $nav-text-color;
+      -webkit-transition: $duration;
+      -moz-transition: $duration;
+      -o-transition: $duration;
+      transition: $duration;
+      &:before, &:after {
+        display: block;
+        content: "";
+        height: 4px;
+        width: 36px;
+        background: $nav-text-color;
+        position: absolute;
+        z-index: -1;
+        -webkit-transition: $duration/2;
+        -moz-transition: $duration/2;
+        -o-transition: $duration/2;
+        transition: $duration/2;
+      }
+      &:before {
+        top: 10px;
+      }
+      &:after {
+        top: -10px;
+      }
+    }
+    &:hover {
+      -webkit-transition: $duration;
+      -moz-transition: $duration;
+      -o-transition: $duration;
+      transition: $duration;
+      .navicon:before,
+      .navicon:after {
+        -webkit-transition: $duration/2;
+        -moz-transition: $duration/2;
+        -o-transition: $duration/2;
+        transition: $duration/2;
+      }
+    } 
+  }
+  nav {
+		margin-top: 36px;
+		// float: right;
+		clear: both;
+		display: none;
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			li {
+				// display: inline-block;
+				// float: left;
+				text-align: center;
+				padding-right: 25px;
+				@media only screen and (min-width : 768px) {
+	        float: left;
+	        background: transparent;  
+	        &:last-child {
+	          margin-right: 0;
+	          border-right: 0;
+	        }
+	      }
+				a {
+					font-family: 'Roboto', sans-serif;
+					color: #ffffff;
+					text-transform: uppercase;
+					text-decoration: none;
+					font-weight: bold;
+					font-size: 12px;
+					letter-spacing: 0.6px;
+					&:hover {
+						color: #00e0d0;
+					}
+					&:active {
+						color: #00e0d0;
+					}
+				}
+			}
+		}
+    @media only screen 
+    and (min-width : 768px) {
+      float: left;
+      background: transparent;  
+      &:last-child {
+        margin-right: 0;
+        border-right: 0;
+      }
+    }
+  
+    &.nav-expanded {
+      display: block;
+    }
+    @media only screen 
+    and (min-width : 768px) {
+      display: block;
+      float: right;
+      border-top: 0;
+      border-left: 1px solid #342B58;;
+      box-shadow: none;
+      margin-left: 15px;
+    }
+    @media only screen 
+    and (min-width : 1201px) {
+      border-right: 1px solid #342B58;;
+      opacity: 1;
+    }
+  
+	}
 }
+
+// .toggle-nav {
+// 	display: none;
+//   float: right;
+//   color: white;
+//   cursor: pointer;
+// }
 
 // .menu {
 // 	position: fixed;
@@ -45,65 +237,65 @@ header {
 // 	width: 100%;
 // 	// overflow: hidden;
 // }
-nav {
-	margin-top: 36px;
-	float: right;
-	ul {
-		margin: 0;
-		padding: 0;
-		list-style-type: none;
-		li {
-			display: inline-block;
-			float: left;
-			padding-right: 25px;
-			a {
-				font-family: 'Roboto', sans-serif;
-				color: #ffffff;
-				text-transform: uppercase;
-				text-decoration: none;
-				font-weight: bold;
-				font-size: 12px;
-				letter-spacing: 0.6px;
-				&:hover {
-					color: #00e0d0;
-				}
-				&:active {
-					color: #00e0d0;
-				}
-			}
-		}
-	}
-}
-@media screen and (max-width: 740px) {
-	.toggle-nav {
-		display: block;
-		float: right;
-		position: fixed;
-		right: 0;
-		z-index: 1;
-	}
-	nav {
-		margin-top: 0px;
-		position: fixed;
-		z-index: 1000;
-		width: 100%;
-	}
-	nav ul, nav:active ul {
-		display: none;
-	}
-	.show {
-		display: block;
-		text-align: center;
-		background-color: #3d3467;
-		margin-top: 70px;
-		opacity: 0.98;
-	}
-	nav ul li {
-		width: 100%;
-		float: none;
-		padding: 10px;	
-	}
-}
+// nav {
+// 	margin-top: 36px;
+// 	float: right;
+// 	ul {
+// 		margin: 0;
+// 		padding: 0;
+// 		list-style-type: none;
+// 		li {
+// 			display: inline-block;
+// 			float: left;
+// 			padding-right: 25px;
+// 			a {
+// 				font-family: 'Roboto', sans-serif;
+// 				color: #ffffff;
+// 				text-transform: uppercase;
+// 				text-decoration: none;
+// 				font-weight: bold;
+// 				font-size: 12px;
+// 				letter-spacing: 0.6px;
+// 				&:hover {
+// 					color: #00e0d0;
+// 				}
+// 				&:active {
+// 					color: #00e0d0;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+// @media screen and (max-width: 740px) {
+// 	.toggle-nav {
+// 		display: block;
+// 		float: right;
+// 		position: fixed;
+// 		right: 0;
+// 		z-index: 1;
+// 	}
+// 	nav {
+// 		margin-top: 0px;
+// 		position: fixed;
+// 		z-index: 1000;
+// 		width: 100%;
+// 	}
+// 	nav ul, nav:active ul {
+// 		display: none;
+// 	}
+// 	.show {
+// 		display: block;
+// 		text-align: center;
+// 		background-color: #3d3467;
+// 		margin-top: 70px;
+// 		opacity: 0.98;
+// 	}
+// 	nav ul li {
+// 		width: 100%;
+// 		float: none;
+// 		padding: 10px;	
+// 	}
+// }
 .btn {
 	text-align: center;
   width: 118px;
@@ -179,6 +371,9 @@ nav {
 		@extend .btn;
 		margin: 45px auto 100px;
 	}
+}
+.owl-carousel.slide-one {
+	margin-top: 30px;
 }
 .owl-dots {
 	text-align: center;
@@ -677,6 +872,7 @@ footer {
 			}
 	  }		
 	}
+
 	.links {
     ul {
     	margin-top: 20px;
